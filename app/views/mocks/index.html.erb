@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
 <section>
 <%= form_for Mock.new do |f| %>
-  <%= f.label :pic, "Upload mocks:" %>
+  <%= f.label :pic, "Just DRAG and DROP your mock images on this page, or browse:" %>
   <%= file_field_tag :pic, :multiple => true, :name => "mock[pic]" %>
 <% end %>
 </section>
