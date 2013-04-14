@@ -6,7 +6,7 @@
 			end
 		%></h3>
 	<p>
-		<a href="<%= image_path @mock.pic.url %>" data-colorbox-title="<%= @mock.name %>" data-colorbox="true" data-colorbox-max-width="95%" data-colorbox-max-height="95%"><%= image_tag @mock.pic.url(:preview), alt: @mock.name %></a>
+		<a href="<%= image_path @mock.pic.url %>" data-colorbox-title="<%= @mock.name %>" data-colorbox="true" data-colorbox-max-width="95%" data-colorbox-photo="true" data-colorbox-max-height="95%"><%= image_tag @mock.pic.url(:preview), alt: @mock.name %></a>
 	</p>
 	<p class="well">
 		<% if @mock.user == current_user %>
