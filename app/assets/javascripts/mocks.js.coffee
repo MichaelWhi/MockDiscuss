@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
+	#blackNote = ->
+	#  $(document.createElement('span')).addClass('black circle note')
+  #
+	#$('#nutmeg').annotatableImage(blackNote)
+	
   $('.best_in_place').best_in_place()
   $('#new_mock').fileupload
     dataType: "script"

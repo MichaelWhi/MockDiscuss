@@ -16,5 +16,6 @@
 //= require best_in_place
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.annotate
 //= require colorbox-rails
 //= require_tree .
