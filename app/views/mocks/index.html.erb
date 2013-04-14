@@ -1,0 +1,22 @@
+<h1>Mocks</h1>
+<% if user_signed_in? %>
+<section>
+<%= form_for Mock.new do |f| %>
+  <%= f.label :pic, "Upload mocks:" %>
+  <%= file_field_tag :pic, :multiple => true, :name => "mock[pic]" %>
+<% end %>
+</section>
+<% end %>
+
+<section id="mocks">
+  <%= render @mocks %>
+</section>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <progress value="0" max="100">
+  <span class="downloadProgress">0</span>%
+  </progress>
+</div>
+</script>

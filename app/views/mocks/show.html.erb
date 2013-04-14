@@ -1,0 +1,35 @@
+<section class="mock">
+	<h3><%= if @mock.user == current_user
+				best_in_place @mock, :name 
+			else
+				@mock.name
+			end
+		%></h3>
+	<p>
+		<a href="<%= image_path @mock.pic.url %>" data-colorbox-title="<%= @mock.name %>" data-colorbox="true" data-colorbox-max-width="95%" data-colorbox-max-height="95%"><%= image_tag @mock.pic.url(:preview), alt: @mock.name %></a>
+	</p>
+	<p class="well">
+		<% if @mock.user == current_user %>
+			<%= best_in_place @mock, :description, nil: "<em>Add a description</em>", type: :textarea %>
+		<% else %>
+			<%= @mock.description %>
+		<% end%>
+		<br>
+		<small><%= @mock.user.try(:name) %> (<%= time_ago_in_words @mock.created_at %> ago)
+		<% if @mock.user == current_user %>
+			| <%= link_to "Delete", @mock, method: :delete, confirm: "Really delete this mock file?" %>
+		<% end %>
+		</small>
+	</p>
+</section>
+
+<section>
+	<% if user_signed_in? %>
+	  <%= form_for Comment.new, url: comment_mock_path(@mock), method: :post, remote: true do |f| %>
+		<%= f.text_area :comment, style: "width: 98%; height: 20px;", rows: 2 %> <%= f.submit %>
+	  <% end %>
+	<% end %>
+	<div id="comments">
+		<%= render @comments %>
+	</div>
+</section>

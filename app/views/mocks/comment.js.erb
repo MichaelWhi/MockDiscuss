@@ -1,0 +1,6 @@
+<% if @comment.new_record? %>
+  alert("Failed to save comment: <%= j @comment.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#comments").prepend("<%= j render(@comment) %>");
+  $("#comment_comment").val("");
+<% end %>

@@ -1,0 +1,8 @@
+<div class="mock small-border">
+	<h3><%= link_to mock.name, mock %>
+	</h3>
+	<p>
+		<%= link_to image_tag(mock.pic.url(:preview), alt: mock.name), mock %><br>
+		<small><%= mock.user.try(:name) %> (<%= time_ago_in_words mock.created_at %> ago)</small>
+	</p>
+</div>

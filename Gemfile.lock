@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/MichaelWhi/colorbox-rails.git
+  revision: 3e00dedc594f80978e6c0600e5091c5811860f0f
+  specs:
+    colorbox-rails (0.0.14)
+      jquery-rails
+      rails (>= 3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,8 +36,13 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts_as_commentable (3.0.1)
     addressable (2.3.3)
     arel (3.0.2)
+    aws_cf_signer (0.1.1)
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (~> 3.1)
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -42,6 +55,12 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+    cloudinary (1.0.54)
+      aws_cf_signer
+      rest-client
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -87,6 +106,9 @@ GEM
     hub (1.10.5)
     i18n (0.6.1)
     journey (1.0.4)
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -100,6 +122,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.22)
+    mini_magick (3.5.0)
+      subexec (~> 0.2.1)
     multi_json (1.7.2)
     multipart-post (1.2.0)
     nokogiri (1.5.9)
@@ -118,6 +142,10 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    parallel (0.6.4)
+    parallel_tests (0.10.4)
+      parallel
+    pg (0.15.1)
     polyglot (0.3.3)
     puma (1.6.3)
       rack (~> 1.2)
@@ -148,6 +176,8 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -176,6 +206,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    subexec (0.2.3)
     thor (0.18.1)
     tilt (1.3.7)
     treetop (1.4.12)
@@ -192,20 +223,29 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable (= 3.0.1)
+  best_in_place
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
   capybara (>= 2.0.3)
+  carrierwave
+  cloudinary
   coffee-rails (~> 3.2.1)
+  colorbox-rails!
   cucumber-rails (>= 1.3.1)
   database_cleaner (>= 1.0.0.RC1)
   email_spec (>= 1.4.0)
   factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
   hub (>= 1.10.2)
+  jquery-fileupload-rails
   jquery-rails
   launchy (>= 2.2.0)
+  mini_magick
   omniauth (>= 1.1.3)
   omniauth-google-oauth2
+  parallel_tests
+  pg
   puma (>= 1.6.3)
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)

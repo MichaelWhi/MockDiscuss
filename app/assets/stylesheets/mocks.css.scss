@@ -1,0 +1,28 @@
+// Place all the styles related to the mocks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+img {
+	max-width: 100%;
+}
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+.small-border {
+	border: 1px solid #EEE;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+@media only screen and (max-width: 767px) {
+	.small-border {
+		border: none;
+	}
+}

@@ -1,0 +1,5 @@
+<% if @mock.new_record? %>
+  alert("Failed to upload mock: <%= j @mock.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#mocks").prepend("<%= j render(@mock) %>");
+<% end %>

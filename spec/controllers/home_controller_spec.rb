@@ -3,9 +3,10 @@ require 'spec_helper'
 describe HomeController do
 
   describe "GET 'index'" do
-    it "returns http success" do
+    it "should display the recent mocks" do
+      mock = FactoryGirl.create(:mock)
       get 'index'
-      response.should be_success
+      expect(assigns(:mocks)).to include(mock)
     end
   end
 
