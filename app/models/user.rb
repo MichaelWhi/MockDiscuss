@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :mocks
 
   def self.create_with_omniauth(auth)
-    if auth['info']['email'] && ENV["COMPANY_MAILS"].split(",").include?(auth['info']['email'].trim)
+    if auth['info']['email'] && ENV["COMPANY_MAILS"].split(",").include?(auth['info']['email'].strip)
       create! do |user|
         user.provider = auth['provider']
         user.uid = auth['uid']
