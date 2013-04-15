@@ -12,7 +12,7 @@
 		<% if @mock.user == current_user %>
 			<%= best_in_place @mock, :description, nil: "<em>Add a description</em>", type: :textarea %>
 		<% else %>
-			<%= @mock.description %>
+			<%= simple_format @mock.description %>
 		<% end%>
 		<br>
 		<small><%= @mock.user.try(:name) %> (<%= time_ago_in_words @mock.created_at %> ago)
